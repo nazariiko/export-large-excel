@@ -4,6 +4,8 @@ const cors = require('cors');
 const ExcelJS = require('exceljs');
 const Stream = require('stream');
 
+const PORT = process.env.PORT || 3000
+
 const app = express();
 
 app.use(function(req, res, next) {
@@ -53,7 +55,7 @@ app.post('/', (req, res) => {
 
   
 try {
-  app.listen(3000, () => console.log('listening on port', 3000))
+  app.listen(PORT, () => console.log('listening on port', PORT))
 } catch (error) {
   console.log('Something went wrong: ' + error)
 }
